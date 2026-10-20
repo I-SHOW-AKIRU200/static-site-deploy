@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="LinkCircle collaboration hub">
+  <defs>
+    <linearGradient id="bg4" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="softgold" x1="0" x2="1">
+      <stop stop-color="#f5d27a"/>
+      <stop offset="1" stop-color="#d7a958"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg4)"/>
+  <rect x="60" y="70" width="1080" height="660" rx="24" fill="#0b1220" stroke="#2a334a"/>
+  <rect x="120" y="130" width="220" height="520" rx="18" fill="#111827"/>
+  <circle cx="160" cy="190" r="20" fill="url(#softgold)"/>
+  <rect x="198" y="176" width="100" height="26" rx="8" fill="#1d2a3f"/>
+  <circle cx="190" cy="300" r="26" fill="#f5d27a" opacity="0.8"/>
+  <circle cx="190" cy="380" r="26" fill="#f5d27a" opacity="0.8"/>
+  <circle cx="190" cy="460" r="26" fill="#f5d27a" opacity="0.8"/>
+  <rect x="420" y="140" width="210" height="42" rx="16" fill="#f5d27a" opacity="0.9"/>
+  <rect x="680" y="140" width="180" height="42" rx="16" fill="#1d2a3f"/>
+  <rect x="420" y="230" width="500" height="220" rx="22" fill="#101827" stroke="#2a334a"/>
+  <path d="M470 390 C530 330, 600 300, 670 330 S770 390, 870 300" fill="none" stroke="#f5d27a" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="470" cy="390" r="18" fill="#f5d27a"/>
+  <circle cx="570" cy="340" r="18" fill="#f5d27a"/>
+  <circle cx="670" cy="330" r="18" fill="#f5d27a"/>
+  <circle cx="770" cy="390" r="18" fill="#f5d27a"/>
+  <circle cx="870" cy="300" r="18" fill="#f5d27a"/>
+  <rect x="420" y="490" width="240" height="110" rx="18" fill="#111827" stroke="#2a334a"/>
+  <rect x="690" y="490" width="240" height="110" rx="18" fill="#111827" stroke="#2a334a"/>
+  <rect x="470" y="532" width="120" height="18" rx="9" fill="#f5d27a"/>
+  <rect x="740" y="532" width="140" height="18" rx="9" fill="#f5d27a"/>
+</svg>
