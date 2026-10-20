@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="FocusDesk mockup">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#0d1323"/>
+      <stop offset="1" stop-color="#1f253a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop stop-color="#f5d27a"/>
+      <stop offset="1" stop-color="#d9a74f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="50" y="60" width="1100" height="680" rx="24" fill="#111827" stroke="#2a334a"/>
+  <rect x="90" y="100" width="220" height="600" rx="18" fill="#0b1220"/>
+  <circle cx="132" cy="150" r="18" fill="url(#gold)"/>
+  <rect x="170" y="136" width="100" height="28" rx="8" fill="#1d2a3f"/>
+  <rect x="110" y="220" width="170" height="18" rx="9" fill="#1d2a3f"/>
+  <rect x="110" y="260" width="170" height="18" rx="9" fill="#1d2a3f"/>
+  <rect x="110" y="300" width="130" height="18" rx="9" fill="#1d2a3f"/>
+  <rect x="360" y="120" width="700" height="120" rx="18" fill="#141d30" stroke="#2a334a"/>
+  <rect x="390" y="160" width="250" height="18" rx="9" fill="#f5d27a" opacity="0.92"/>
+  <rect x="690" y="150" width="140" height="44" rx="12" fill="#1d2a3f"/>
+  <rect x="850" y="150" width="150" height="44" rx="12" fill="#1d2a3f"/>
+  <rect x="360" y="272" width="330" height="330" rx="18" fill="#141d30" stroke="#2a334a"/>
+  <rect x="720" y="272" width="340" height="330" rx="18" fill="#141d30" stroke="#2a334a"/>
+  <rect x="390" y="316" width="230" height="16" rx="8" fill="#e5e7eb" opacity="0.7"/>
+  <rect x="390" y="348" width="180" height="14" rx="7" fill="#dbe2f0" opacity="0.5"/>
+  <rect x="390" y="395" width="240" height="120" rx="16" fill="#0f172a"/>
+  <circle cx="430" cy="455" r="38" fill="url(#gold)" opacity="0.85"/>
+  <rect x="490" y="420" width="110" height="18" rx="9" fill="#f5d27a"/>
+  <rect x="490" y="450" width="90" height="14" rx="7" fill="#dbe2f0" opacity="0.7"/>
+  <rect x="760" y="322" width="150" height="18" rx="9" fill="#f5d27a" opacity="0.85"/>
+  <rect x="760" y="356" width="210" height="14" rx="7" fill="#dbe2f0" opacity="0.6"/>
+  <rect x="760" y="390" width="200" height="150" rx="18" fill="#0f172a"/>
+  <path d="M780 505 C830 430, 870 440, 910 490 S990 560, 990 500" fill="none" stroke="#f5d27a" stroke-width="8" stroke-linecap="round"/>
+</svg>
