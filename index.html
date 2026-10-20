@@ -1,209 +1,933 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>AKIRU Freelance — Share your idea, I'll turn it into reality</title>
-<meta name="description" content="AKIRU Freelance — custom freelance builds and ready-made SaaS products. Share your idea, I'll turn it into reality." />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0a0f'/><text x='50%25' y='54%25' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23f5d27a' text-anchor='middle' dominant-baseline='middle'>A</text></svg>" />
-<style>
-  :root{--bg:#0a0a0f;--bg2:#11111a;--line:#1f1f2e;--text:#e9e9f1;--muted:#8a8aa3;--gold:#f5d27a;--gold2:#e2b85a}
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
-  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(10,10,15,.8);backdrop-filter:blur(12px);z-index:20}
-  .brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.2px}
-  .brand .dot{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--gold2));display:grid;place-items:center;color:#0a0a0f;font-weight:800;font-family:Georgia,serif}
-  .nav{display:flex;gap:22px;font-size:14px;color:var(--muted)}
-  .nav a:hover{color:var(--text)}
-  .head{display:flex;justify-content:space-between;align-items:center}
-  .hero{padding:72px 0 56px;border-bottom:1px solid var(--line);text-align:center}
-  .eyebrow{display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid #2a2618;background:#15130a;padding:6px 12px;border-radius:999px;margin-bottom:22px}
-  h1{font-size:clamp(34px,5.5vw,54px);line-height:1.12;margin:0 0 18px;letter-spacing:-.02em}
-  h1 em{font-style:normal;color:var(--gold)}
-  .lede{max-width:640px;margin:0 auto 26px;color:var(--muted);font-size:17px}
-  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-  .btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid transparent;transition:transform .12s ease,background .2s ease,border-color .2s ease}
-  .btn:active{transform:translateY(1px)}
-  .btn-primary{background:var(--gold);color:#0a0a0f}
-  .btn-primary:hover{background:var(--gold2)}
-  .btn-ghost{border-color:var(--line);color:var(--text)}
-  .btn-ghost:hover{border-color:#3a3a52}
-  section{padding:64px 0;border-bottom:1px solid var(--line)}
-  section:last-of-type{border-bottom:none}
-  h2{font-size:clamp(22px,2.6vw,28px);margin:0 0 8px;letter-spacing:-.01em}
-  .sub{color:var(--muted);margin:0 0 28px}
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  @media(max-width:680px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px}
-  .card h3{margin:0 0 8px;font-size:17px}
-  .card p{margin:0;color:var(--muted);font-size:14.5px}
-  .products{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  @media(max-width:760px){.products{grid-template-columns:1fr}}
-  .product{background:var(--bg2);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease,border-color .2s ease,box-shadow .2s ease}
-  .product:hover{transform:translateY(-3px);border-color:#3a3a52;box-shadow:0 12px 30px rgba(0,0,0,.35)}
-  .product .cover{aspect-ratio:3/2;background:#0a0a0f;overflow:hidden}
-  .product .cover img{width:100%;height:100%;object-fit:cover}
-  .product .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
-  .pill{display:inline-block;align-self:flex-start;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid #2a2618;background:#15130a;padding:4px 10px;border-radius:999px}
-  .product h3{margin:4px 0 2px;font-size:18px}
-  .product p{margin:0;color:var(--muted);font-size:14.5px}
-  .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted)}
-  .meta .price{color:var(--text);font-weight:600}
-  ul.feats{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 18px}
-  @media(max-width:680px){ul.feats{grid-template-columns:1fr}}
-  ul.feats li{padding-left:22px;position:relative;font-size:15px}
-  ul.feats li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-  @media(max-width:760px){.steps{grid-template-columns:repeat(2,1fr)}}
-  .step{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px}
-  .step .n{font-family:Georgia,serif;color:var(--gold);font-size:22px;font-weight:700}
-  .step h4{margin:6px 0 4px;font-size:15px}
-  .step p{margin:0;color:var(--muted);font-size:13.5px}
-  .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
-  @media(max-width:760px){.contact{grid-template-columns:1fr}}
-  .contact .panel{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px}
-  .row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px dashed var(--line);font-size:15px;gap:12px}
-  .row:first-of-type{border-top:none}
-  .label{color:var(--muted)}
-  .value{color:var(--text);font-weight:500;text-align:right}
-  footer{padding:28px 0 48px;color:var(--muted);font-size:13.5px;text-align:center}
-  footer .links{display:flex;gap:18px;justify-content:center;margin-bottom:8px;flex-wrap:wrap}
-  footer .links a:hover{color:var(--text)}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AKIRU Freelance — Build what you imagine</title>
+  <meta name="description" content="AKIRU Freelance — custom software builds, freelance project execution, and ready-made SaaS products." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0a0f'/><text x='50%25' y='54%25' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23f5d27a' text-anchor='middle' dominant-baseline='middle'>A</text></svg>" />
+  <style>
+    :root {
+      --bg: #080b12;
+      --bg2: #0d1320;
+      --panel: rgba(18, 24, 35, 0.88);
+      --panel-strong: #121c2c;
+      --line: rgba(163, 180, 210, 0.14);
+      --text: #edf2ff;
+      --muted: #9aa9c2;
+      --gold: #f5d27a;
+      --gold-2: #e0b558;
+      --blue: #8fc3ff;
+      --shadow: 0 30px 80px rgba(7, 9, 15, 0.55);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(245, 210, 122, 0.10), transparent 23%),
+        radial-gradient(circle at top right, rgba(143, 195, 255, 0.12), transparent 24%),
+        var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    p { margin: 0; }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(8, 11, 18, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      font-size: 0.96rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-family: Georgia, serif;
+      font-weight: 800;
+      color: #0c1018;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+
+    .brand small {
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      font-weight: 500;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .nav a { transition: color 0.2s ease; }
+    .nav a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      padding: 15px 22px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #141821;
+      box-shadow: 0 18px 34px rgba(245, 210, 122, 0.24);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.02);
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 88px 0 46px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 12% 20%, rgba(245,210,122,0.12), transparent 18%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(245,210,122,0.26);
+      background: rgba(245,210,122,0.08);
+      border-radius: 999px;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 18px;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+    }
+
+    h1 .highlight { color: var(--gold); }
+
+    .lede {
+      max-width: 630px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .cta {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .mini-stats {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .mini-stats strong {
+      color: var(--text);
+      font-size: 1.05rem;
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    .dashboard {
+      position: relative;
+      padding: 18px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(18,24,35,0.9), rgba(11,16,24,0.96));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .dashboard-shell {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.04);
+      background: linear-gradient(180deg, rgba(9,14,20,0.85), rgba(18,27,38,0.9));
+    }
+
+    .dashboard-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.01);
+    }
+
+    .dots { display: inline-flex; gap: 8px; }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+    }
+
+    .dot:nth-child(1) { background: #ff6b6b; }
+    .dot:nth-child(2) { background: #f5d27a; }
+    .dot:nth-child(3) { background: #67d4a4; }
+
+    .window-label {
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .dashboard-body {
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr;
+      gap: 18px;
+      padding: 18px;
+    }
+
+    .sidebar {
+      background: rgba(10,14,20,0.88);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 14px;
+    }
+
+    .side-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 10px;
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    .side-item.active {
+      background: linear-gradient(135deg, rgba(245,210,122,0.12), rgba(143,195,255,0.08));
+      color: var(--text);
+      border: 1px solid rgba(245,210,122,0.18);
+    }
+
+    .side-icon {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--blue));
+      box-shadow: 0 0 18px rgba(143,195,255,0.4);
+    }
+
+    .main-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+    }
+
+    .stat-box {
+      padding: 16px 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .stat-box .label {
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: clamp(1.2rem, 2vw, 1.8rem);
+      letter-spacing: -0.05em;
+    }
+
+    .chart {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(16,22,30,0.8), rgba(11,18,26,0.86));
+      overflow: hidden;
+    }
+
+    .chart-head {
+      padding: 16px 18px 8px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .chart-body {
+      padding: 10px 18px 18px;
+      height: 200px;
+      display: grid;
+      align-items: end;
+    }
+
+    .bars {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0,1fr));
+      gap: 10px;
+      align-items: end;
+      height: 160px;
+    }
+
+    .bar {
+      border-radius: 12px 12px 4px 4px;
+      background: linear-gradient(180deg, rgba(143,195,255,0.9), rgba(245,210,122,0.82));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+    }
+
+    section {
+      padding: 86px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      letter-spacing: -0.05em;
+      line-height: 1.05;
+    }
+
+    .section-head p { color: var(--muted); font-size: 1.05rem; }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(15, 21, 31, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px 20px 18px;
+      box-shadow: 0 14px 36px rgba(2,3,7,0.24);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(245,210,122,0.22);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, rgba(245,210,122,0.15), rgba(143,195,255,0.12));
+      border: 1px solid rgba(245,210,122,0.18);
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card p { color: var(--muted); font-size: 0.96rem; }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      background: rgba(18,24,35,0.78);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(245,210,122,0.26);
+    }
+
+    .product-visual {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(14,18,27,1), rgba(18,29,40,1));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .product-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.04);
+    }
+
+    .product-body { padding: 22px 22px 20px; }
+
+    .tag {
+      display: inline-flex;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(245,210,122,0.08);
+      border: 1px solid rgba(245,210,122,0.18);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .product-body h3 {
+      font-size: 1.45rem;
+      margin: 0 0 10px;
+      letter-spacing: -0.04em;
+    }
+
+    .product-body p { color: var(--muted); font-size: 0.96rem; }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .product-price {
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .step {
+      background: rgba(15, 21, 31, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px 18px;
+    }
+
+    .step-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      font-weight: 800;
+      color: var(--gold);
+      background: rgba(245,210,122,0.08);
+      border: 1px solid rgba(245,210,122,0.18);
+      margin-bottom: 16px;
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+    }
+
+    .step h3 { margin: 0 0 8px; font-size: 1.08rem; }
+    .step p { color: var(--muted); font-size: 0.92rem; }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 20px;
+    }
+
+    .contact-panel {
+      background: rgba(15, 21, 31, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .contact-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .contact-item:first-child { border-top: none; padding-top: 0; }
+    .contact-item strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .contact-panel p { color: var(--muted); font-size: 0.97rem; }
+
+    .cta-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    footer {
+      padding: 30px 0 54px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .dashboard-body,
+      .service-grid,
+      .showcase,
+      .process,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .process { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .nav { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .service-grid,
+      .process,
+      .stat-row,
+      .showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner,
+      .footer-inner {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .btn { width: 100%; }
+      .cta { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="wrap head">
-    <div class="brand"><div class="dot">A</div><div>AKIRU <span style="color:var(--muted);font-weight:400">Freelance</span></div></div>
-    <nav class="nav">
-      <a href="#services">Services</a>
-      <a href="#products">Products</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Freelance • Independent Builder</span>
-    <h1>Share your idea, and I'll turn it into <em>reality.</em></h1>
-    <p class="lede">I build custom freelance projects for clients and ship ready-made SaaS products you can plug straight into your stack. One person, end-to-end — from first sketch to a working product.</p>
-    <div class="cta">
-      <a class="btn btn-primary" href="mailto:contact@akiru.online">Start a project</a>
-      <a class="btn btn-ghost" href="#products">See my SaaS</a>
-    </div>
-  </div>
-</section>
-<section id="services">
-  <div class="wrap">
-    <h2>What I do</h2>
-    <p class="sub">Custom builds, integrations and ready-made software — all handled by a single owner who cares about the outcome.</p>
-    <div class="grid">
-      <div class="card"><h3>Custom freelance builds</h3><p>Web apps, dashboards, automation tools and bots — built to spec, on time, with the source handed over at the end.</p></div>
-      <div class="card"><h3>Ready-made SaaS products</h3><p>Battle-tested products I built and already maintain. Buy the license, skip months of dev and start using it today.</p></div>
-      <div class="card"><h3>Integrations & APIs</h3><p>Payment gateways, Telegram bots, CRMs, third-party APIs — wired together cleanly with stable error handling.</p></div>
-      <div class="card"><h3>Maintenance & support</h3><p>Long-term fixes, feature tweaks, performance passes and hosting help on the products I deliver.</p></div>
-    </div>
-  </div>
-</section>
-<section id="products" style="background:linear-gradient(180deg,#0a0a0f 0%,#0c0c14 100%)">
-  <div class="wrap">
-    <h2>Featured products</h2>
-    <p class="sub">Ready-made software you can license today — plug, integrate, ship.</p>
-    <div class="products">
-      <article class="product">
-        <div class="cover"><img src="assets/p1.svg" alt="FocusDesk productivity workspace" /></div>
-        <div class="body">
-          <span class="pill">Productivity</span>
-          <h3>FocusDesk</h3>
-          <p>A team productivity workspace with shared projects, smart task boards and quiet hours so deep work actually gets protected.</p>
-          <div class="meta"><span>One-time license</span><span class="price">From ₹4,999</span></div>
-        </div>
-      </article>
-      <article class="product">
-        <div class="cover"><img src="assets/p2.svg" alt="NeuralPipe AI workflow automation" /></div>
-        <div class="body">
-          <span class="pill">AI & Automation</span>
-          <h3>NeuralPipe</h3>
-          <p>An AI workflow automation tool that connects your apps, reads intent from incoming messages and routes work to the right pipeline.</p>
-          <div class="meta"><span>One-time license</span><span class="price">From ₹7,999</span></div>
-        </div>
-      </article>
-      <article class="product">
-        <div class="cover"><img src="assets/p3.svg" alt="PulseMetrics analytics dashboard" /></div>
-        <div class="body">
-          <span class="pill">Analytics</span>
-          <h3>PulseMetrics</h3>
-          <p>A clean, fast analytics dashboard for founders — cohort views, funnel breakdowns and revenue at a glance, no SQL required.</p>
-          <div class="meta"><span>One-time license</span><span class="price">From ₹5,999</span></div>
-        </div>
-      </article>
-      <article class="product">
-        <div class="cover"><img src="assets/p4.svg" alt="LinkCircle collaboration hub" /></div>
-        <div class="body">
-          <span class="pill">Collaboration</span>
-          <h3>LinkCircle</h3>
-          <p>A team collaboration hub for chat, threads and shared docs — opinionated defaults, zero setup, ready for your whole org.</p>
-          <div class="meta"><span>One-time license</span><span class="price">From ₹3,999</span></div>
-        </div>
-      </article>
-    </div>
-    <ul class="feats" style="margin-top:28px">
-      <li>Production-grade, maintained under one roof</li>
-      <li>Clean source, documentation included</li>
-      <li>Flexible licensing — use, white-label or resell</li>
-      <li>Optional setup, deployment and integration help</li>
-      <li>Honest pricing — no hidden fees</li>
-      <li>Active updates and direct support channel</li>
-    </ul>
-    <div style="text-align:center;margin-top:28px">
-      <a class="btn btn-primary" href="https://t.me/akiruofficial" target="_blank" rel="noopener">Ask about available products</a>
-    </div>
-  </div>
-</section>
-<section id="process">
-  <div class="wrap">
-    <h2>How a project runs</h2>
-    <p class="sub">A simple four-step loop — same whether it's a 3-day fix or a multi-month build.</p>
-    <div class="steps">
-      <div class="step"><div class="n">01</div><h4>Brief</h4><p>You share the idea, the goal and constraints. I confirm scope and a fixed quote.</p></div>
-      <div class="step"><div class="n">02</div><h4>Plan</h4><p>I draft the structure, tech choices, milestones and timeline. You approve before any code.</p></div>
-      <div class="step"><div class="n">03</div><h4>Build</h4><p>I ship in small, reviewable slices. You see real progress on every check-in.</p></div>
-      <div class="step"><div class="n">04</div><h4>Handover</h4><p>Delivery, deployment and optional support. Source, docs and credentials stay with you.</p></div>
-    </div>
-  </div>
-</section>
-<section id="contact">
-  <div class="wrap">
-    <h2>Get in touch</h2>
-    <p class="sub">Tell me what you want to build — I'll reply within a day with a clear next step.</p>
-    <div class="contact">
-      <div class="panel">
-        <div class="row"><span class="label">Email</span><a class="value" href="mailto:contact@akiru.online">contact@akiru.online</a></div>
-        <div class="row"><span class="label">Telegram</span><a class="value" href="https://t.me/akiruofficial" target="_blank" rel="noopener">@akiruofficial</a></div>
-        <div class="row"><span class="label">Service area</span><span class="value">Worldwide (remote)</span></div>
-        <div class="row"><span class="label">Response time</span><span class="value">Within ~24 hours</span></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" aria-label="AKIRU Freelance">
+        <div class="brand-mark">A</div>
+        <div>AKIRU <small>Freelance</small></div>
       </div>
-      <div class="panel">
-        <p style="margin:0 0 12px;color:var(--text);font-weight:500">Prefer to write a quick brief?</p>
-        <p style="margin:0 0 16px;color:var(--muted);font-size:14.5px">Send a short note with what you want to build, your deadline, and any references. I'll reply with a fit-check and a quote.</p>
-        <a class="btn btn-primary" href="mailto:contact@akiru.online?subject=Project%20enquiry">Email me</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Freelance • Independent Builder</span>
+          <h1>Share your idea, and I’ll turn it into <span class="highlight">reality.</span></h1>
+          <p class="lede">I build custom software, automate messy workflows, and ship polished SaaS products that help businesses move faster with less friction.</p>
+
+          <div class="cta">
+            <a class="btn btn-primary" href="mailto:contact@akiru.online">Start a project</a>
+            <a class="btn btn-secondary" href="#products">See my products</a>
+          </div>
+
+          <div class="mini-stats">
+            <div><strong>4+</strong> years building</div>
+            <div><strong>20+</strong> projects delivered</div>
+            <div><strong>24h</strong> average reply</div>
+          </div>
+        </div>
+
+        <div class="dashboard" aria-label="Product dashboard preview">
+          <div class="dashboard-shell">
+            <div class="dashboard-top">
+              <div class="dots" aria-hidden="true">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <div class="window-label">AKIRU OS</div>
+            </div>
+
+            <div class="dashboard-body">
+              <aside class="sidebar">
+                <div class="side-item active"><span class="side-icon"></span> Overview</div>
+                <div class="side-item"><span class="side-icon"></span> Workflows</div>
+                <div class="side-item"><span class="side-icon"></span> Clients</div>
+                <div class="side-item"><span class="side-icon"></span> Automations</div>
+              </aside>
+
+              <div class="main-panel">
+                <div class="stat-row">
+                  <div class="stat-box">
+                    <span class="label">Revenue</span>
+                    <strong>₹8.4L</strong>
+                  </div>
+                  <div class="stat-box">
+                    <span class="label">Orders</span>
+                    <strong>346</strong>
+                  </div>
+                  <div class="stat-box">
+                    <span class="label">Growth</span>
+                    <strong>+38%</strong>
+                  </div>
+                </div>
+
+                <div class="chart">
+                  <div class="chart-head">
+                    <span>Weekly pipeline</span>
+                    <span style="color: var(--gold); font-weight:700;">+12.4%</span>
+                  </div>
+                  <div class="chart-body">
+                    <div class="bars" aria-label="Bar chart">
+                      <span class="bar" style="height: 42%;"></span>
+                      <span class="bar" style="height: 58%;"></span>
+                      <span class="bar" style="height: 64%;"></span>
+                      <span class="bar" style="height: 52%;"></span>
+                      <span class="bar" style="height: 76%;"></span>
+                      <span class="bar" style="height: 88%;"></span>
+                      <span class="bar" style="height: 96%;"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">What I do</div>
+          <h2>Product thinking, execution, and polished design.</h2>
+          <p>From product discovery to launch, I handle the work that turns a rough idea into a real, useful system.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="card">
+            <div class="card-icon">✦</div>
+            <h3>Custom builds</h3>
+            <p>Web apps, dashboards, lead systems, internal tools, and launch-ready product MVPs built to spec.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚙</div>
+            <h3>Automation</h3>
+            <p>Integrations, bots, workflows, and no-code/low-code automations that reduce manual effort.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">◎</div>
+            <h3>Ready-made SaaS</h3>
+            <p>Clean, practical software products with straightforward pricing and real business utility.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">▣</div>
+            <h3>Support & growth</h3>
+            <p>Maintenance, performance tuning, feature updates, and product improvements after launch.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">Featured products</div>
+          <h2>Software that is already built and ready to use.</h2>
+          <p>Each product is designed to solve a real workflow problem with less overhead and more clarity.</p>
+        </div>
+
+        <div class="showcase">
+          <article class="product-card">
+            <div class="product-visual">
+              <img src="https://hlstaxi3a86japp9.public.blob.vercel-storage.com/cs-screen-6-gV3outt4lhLsn6BohmvvaPE7IBp9Hc.png" alt="FocusDesk productivity workspace" />
+            </div>
+            <div class="product-body">
+              <span class="tag">Productivity</span>
+              <h3>FocusDesk</h3>
+              <p>Shared workspaces, task planning, and quiet-hour optimization to keep focused teams moving.</p>
+              <div class="product-meta">
+                <span>One-time license</span>
+                <span class="product-price">From ₹4,999</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-visual">
+              <img src="https://hlstaxi3a86japp9.public.blob.vercel-storage.com/cs-screen-5-WPldQvnDJkfnVa2YG05MdJaadazOyL.png" alt="NeuralPipe AI workflow automation" />
+            </div>
+            <div class="product-body">
+              <span class="tag">AI + Automation</span>
+              <h3>NeuralPipe</h3>
+              <p>Connect your tools, automate routing, and create AI-powered workflows without the usual complexity.</p>
+              <div class="product-meta">
+                <span>One-time license</span>
+                <span class="product-price">From ₹7,999</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-visual">
+              <img src="https://hlstaxi3a86japp9.public.blob.vercel-storage.com/cs-screen-4-onpNiDdjJR52xqsc511IF63X85N77O.png" alt="PulseMetrics analytics dashboard" />
+            </div>
+            <div class="product-body">
+              <span class="tag">Analytics</span>
+              <h3>PulseMetrics</h3>
+              <p>Founder-friendly analytics that show revenue signals, retention patterns, and funnel health clearly.</p>
+              <div class="product-meta">
+                <span>One-time license</span>
+                <span class="product-price">From ₹5,999</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-visual">
+              <img src="https://hlstaxi3a86japp9.public.blob.vercel-storage.com/cs-screen-3-evD2JimxY9VhkCn7fiwQrloORwdlxh.png" alt="LinkCircle collaboration hub" />
+            </div>
+            <div class="product-body">
+              <span class="tag">Collaboration</span>
+              <h3>LinkCircle</h3>
+              <p>Collaboration for feedback loops, team discussions, and shared docs without the clutter of bloated tools.</p>
+              <div class="product-meta">
+                <span>One-time license</span>
+                <span class="product-price">From ₹3,999</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">How it works</div>
+          <h2>Simple process, clear momentum.</h2>
+          <p>I keep the flow lean and transparent so decisions happen with clarity instead of confusion.</p>
+        </div>
+
+        <div class="process">
+          <article class="step">
+            <div class="step-index">01</div>
+            <h3>Brief</h3>
+            <p>You share the idea, constraints, and objective. I understand the shape of the problem.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-index">02</div>
+            <h3>Plan</h3>
+            <p>I define scope, architecture, and a realistic delivery path before writing code.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-index">03</div>
+            <h3>Build</h3>
+            <p>Work moves in practical milestones, with progress you can review and respond to quickly.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-index">04</div>
+            <h3>Launch</h3>
+            <p>Everything is delivered with documentation, deployment support, and a clear handoff.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">Get in touch</div>
+          <h2>Tell me what you want to build.</h2>
+          <p>Send a quick brief and I’ll respond with a clear next step, scope guidance, and a realistic estimate.</p>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="contact-panel">
+            <div class="contact-list">
+              <div class="contact-item"><span>Email</span><strong><a href="mailto:contact@akiru.online">contact@akiru.online</a></strong></div>
+              <div class="contact-item"><span>Telegram</span><strong><a href="https://t.me/akiruofficial" target="_blank" rel="noopener">@akiruofficial</a></strong></div>
+              <div class="contact-item"><span>Service area</span><strong>Worldwide</strong></div>
+              <div class="contact-item"><span>Response time</span><strong>Within 24 hours</strong></div>
+            </div>
+          </div>
+
+          <div class="contact-panel">
+            <p>Prefer to send a quick brief? Share the idea, rough timeline, and anything you’d like to reference.</p>
+            <div class="cta-box">
+              <a class="btn btn-primary" href="mailto:contact@akiru.online?subject=Project%20enquiry">Email me</a>
+              <a class="btn btn-secondary" href="https://t.me/akiruofficial" target="_blank" rel="noopener">Message on Telegram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> AKIRU Freelance</div>
+      <div class="footer-links">
+        <a href="mailto:contact@akiru.online">contact@akiru.online</a>
+        <a href="https://t.me/akiruofficial" target="_blank" rel="noopener">Telegram</a>
       </div>
     </div>
-  </div>
-</section>
-<footer>
-  <div class="wrap">
-    <div class="links">
-      <a href="mailto:contact@akiru.online">contact@akiru.online</a>
-      <a href="https://t.me/akiruofficial" target="_blank" rel="noopener">t.me/akiruofficial</a>
-    </div>
-    <div>© <span id="y"></span> AKIRU Freelance — Independent, one-person studio.</div>
-  </div>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
