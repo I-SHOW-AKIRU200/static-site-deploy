@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="PulseMetrics dashboard">
+  <defs>
+    <linearGradient id="bg3" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#0a1020"/>
+      <stop offset="1" stop-color="#161d2b"/>
+    </linearGradient>
+    <linearGradient id="golden" x1="0" x2="1">
+      <stop stop-color="#f5d27a"/>
+      <stop offset="1" stop-color="#dc9f43"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg3)"/>
+  <rect x="60" y="60" width="1080" height="680" rx="24" fill="#0f172a" stroke="#2a334a"/>
+  <rect x="100" y="100" width="200" height="600" rx="18" fill="#111827"/>
+  <rect x="140" y="145" width="120" height="18" rx="9" fill="#f5d27a"/>
+  <rect x="140" y="200" width="130" height="14" rx="7" fill="#dbe2f0" opacity="0.7"/>
+  <rect x="140" y="240" width="120" height="14" rx="7" fill="#dbe2f0" opacity="0.5"/>
+  <rect x="140" y="280" width="100" height="14" rx="7" fill="#dbe2f0" opacity="0.5"/>
+  <rect x="350" y="110" width="260" height="130" rx="18" fill="#141d30" stroke="#2a334a"/>
+  <rect x="650" y="110" width="260" height="130" rx="18" fill="#141d30" stroke="#2a334a"/>
+  <rect x="930" y="110" width="180" height="130" rx="18" fill="#141d30" stroke="#2a334a"/>
+  <rect x="350" y="280" width="760" height="330" rx="18" fill="#141d30" stroke="#2a334a"/>
+  <path d="M410 540 L490 500 L560 520 L620 440 L700 470 L780 360 L860 420 L950 280 L1060 350" fill="none" stroke="url(#golden)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="490" cy="500" r="8" fill="#f5d27a"/>
+  <circle cx="560" cy="520" r="8" fill="#f5d27a"/>
+  <circle cx="620" cy="440" r="8" fill="#f5d27a"/>
+  <circle cx="700" cy="470" r="8" fill="#f5d27a"/>
+  <circle cx="780" cy="360" r="8" fill="#f5d27a"/>
+  <circle cx="860" cy="420" r="8" fill="#f5d27a"/>
+  <circle cx="950" cy="280" r="8" fill="#f5d27a"/>
+  <circle cx="1060" cy="350" r="8" fill="#f5d27a"/>
+  <rect x="390" y="150" width="110" height="18" rx="9" fill="#f5d27a"/>
+  <rect x="690" y="150" width="120" height="18" rx="9" fill="#f5d27a"/>
+  <rect x="960" y="150" width="100" height="18" rx="9" fill="#f5d27a"/>
+</svg>
