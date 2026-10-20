@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="NeuralPipe dashboard">
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#101827"/>
+      <stop offset="1" stop-color="#1b1f2a"/>
+    </linearGradient>
+    <linearGradient id="grad" x1="0" x2="1">
+      <stop stop-color="#f5d27a"/>
+      <stop offset="1" stop-color="#89d1ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg2)"/>
+  <rect x="80" y="60" width="1040" height="680" rx="24" fill="#0f172a" stroke="#2a334a"/>
+  <rect x="120" y="110" width="200" height="560" rx="18" fill="#111827"/>
+  <circle cx="170" cy="170" r="18" fill="url(#grad)"/>
+  <rect x="210" y="156" width="70" height="26" rx="8" fill="#1d2a3f"/>
+  <rect x="150" y="240" width="120" height="18" rx="9" fill="#1d2a3f"/>
+  <rect x="150" y="280" width="140" height="18" rx="9" fill="#1d2a3f"/>
+  <rect x="150" y="320" width="130" height="18" rx="9" fill="#1d2a3f"/>
+  <rect x="390" y="120" width="650" height="160" rx="18" fill="#111827" stroke="#2a334a"/>
+  <rect x="430" y="160" width="200" height="18" rx="9" fill="#f5d27a"/>
+  <rect x="430" y="198" width="140" height="14" rx="7" fill="#dbe2f0" opacity="0.7"/>
+  <circle cx="930" cy="200" r="42" fill="url(#grad)" opacity="0.9"/>
+  <rect x="390" y="330" width="300" height="280" rx="18" fill="#111827" stroke="#2a334a"/>
+  <rect x="730" y="330" width="310" height="280" rx="18" fill="#111827" stroke="#2a334a"/>
+  <path d="M430 540 L520 470 L585 510 L650 420" fill="none" stroke="#f5d27a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="430" cy="540" r="10" fill="#f5d27a"/>
+  <circle cx="520" cy="470" r="10" fill="#f5d27a"/>
+  <circle cx="585" cy="510" r="10" fill="#f5d27a"/>
+  <circle cx="650" cy="420" r="10" fill="#f5d27a"/>
+  <rect x="770" y="380" width="180" height="18" rx="9" fill="#f5d27a"/>
+  <rect x="770" y="420" width="150" height="14" rx="7" fill="#dbe2f0" opacity="0.7"/>
+  <rect x="770" y="470" width="200" height="90" rx="18" fill="#0b1220"/>
+  <circle cx="820" cy="515" r="26" fill="url(#grad)"/>
+  <rect x="860" y="500" width="60" height="12" rx="6" fill="#dbe2f0" opacity="0.7"/>
+  <rect x="860" y="522" width="82" height="12" rx="6" fill="#dbe2f0" opacity="0.5"/>
+</svg>
